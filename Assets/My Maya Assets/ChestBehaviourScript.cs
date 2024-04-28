@@ -2,32 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DoorAnimation : MonoBehaviour
 {
+    [SerializeField] private Animator myDoor = null;
+    [SerializeField] private bool openTrigger = false;
 
-    public Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    private bool isOpen = false;
 
     void Update()
     {
-        
-    }
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
+        // Open the door when 'E' key is pressed
+        if (Input.GetKeyDown(KeyCode.E) && !isOpen)
         {
-            // play animation
-        animator.SetTrigger("Open");
-
+            OpenDoor();
         }
     }
 
+    void OpenDoor()
+    {
+        if (myDoor != null)
+        {
+            myDoor.SetTrigger("Open");
+            isOpen = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // If the collider is tagged as "Player" and openTrigger is enabled
+        if (other.CompareTag("Player") && openTrigger)
+        {
+            OpenDoor();
+        }
+    }
+
+    // Close the door when another object exits the collider
+    private void OnTriggerExit(Collider other)
+    {
+        if (isOpen)
+        {
+            myDoor.SetTrigger("Close");
+            isOpen = false;
+        }
+    }
 }
