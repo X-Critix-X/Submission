@@ -11,13 +11,39 @@ public class DoorAnimation : MonoBehaviour
 
     void Update()
     {
-        // Open the door when 'E' key is pressed
-        if (Input.GetKeyDown(KeyCode.E) && !isOpen)
+       // // Toggle the door state when 'E' key is pressed
+       // if (Input.GetKeyDown(KeyCode.E))
+       // {
+       //     ToggleDoor();
+       // }
+    }
+
+    void ToggleDoor()
+    {
+        // Toggle the door state
+        isOpen = !isOpen;
+
+        // Set the appropriate trigger based on the door state
+        if (isOpen)
+        {
+            myDoor.SetTrigger("Open");
+        }
+        else
+        {
+            myDoor.SetTrigger("Close");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // If the collider is tagged as "Player" and openTrigger is enabled, open the door
+        if (other.CompareTag("Player") && openTrigger)
         {
             OpenDoor();
         }
     }
 
+    // Open the door when triggered
     void OpenDoor()
     {
         if (myDoor != null)
@@ -27,22 +53,13 @@ public class DoorAnimation : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // If the collider is tagged as "Player" and openTrigger is enabled
-        if (other.CompareTag("Player") && openTrigger)
-        {
-            OpenDoor();
-        }
-    }
-
-    // Close the door when another object exits the collider
+    // Close the door when triggered
     private void OnTriggerExit(Collider other)
     {
-        if (isOpen)
+        // If the collider is tagged as "Player" and the door is currently open, close the door
+        if (other.CompareTag("Player") && isOpen)
         {
-            myDoor.SetTrigger("Close");
-            isOpen = false;
+            ToggleDoor();
         }
     }
 }

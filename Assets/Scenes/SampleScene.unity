@@ -6926,6 +6926,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: opening_chest
       objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00004421648
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02450225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0023655817
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.97046864
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.24122748
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159030452951766652, guid: 8d0a2c5bcfa940b46ad672c729074c56, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 27.918
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7696,6 +7728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796101371}
+  - component: {fileID: 1796101372}
   m_Layer: 0
   m_Name: heart in chest
   m_TagString: Untagged
@@ -7711,15 +7744,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796101370}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.25769702, z: -0, w: 0.9662258}
-  m_LocalPosition: {x: -1058.151, y: -731.65283, z: 252.934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -927.764, y: -731.65283, z: 1076.336}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1801233907}
   - {fileID: 225029543}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -29.867, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1796101372
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796101370}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 747296074b84a8747a74ab63978eb909, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1801233907 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 57c6adc75a3a1f24fb27b6d0bb3fbd68, type: 3}
