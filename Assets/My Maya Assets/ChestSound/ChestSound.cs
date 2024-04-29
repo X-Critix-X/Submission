@@ -7,6 +7,7 @@ public class ChestSound : MonoBehaviour
 
     public AudioClip openSound;
     public AudioClip creak_open;
+    public AudioClip closeSound;
 
     // Start is called before the first frame update
     void Start()
@@ -29,4 +30,20 @@ public class ChestSound : MonoBehaviour
 
         }
     }
+
+        private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(creak_open);
+            StartCoroutine(PlayCloseSoundWithDelay(0.9f));
+
+        }
+    }
+
+        IEnumerator PlayCloseSoundWithDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            gameObject.GetComponent<AudioSource>().PlayOneShot(closeSound);
+        }
 }
