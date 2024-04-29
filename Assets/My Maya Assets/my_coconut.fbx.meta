@@ -3,7 +3,12 @@ guid: bedde3eba4cc17d45948efd5fac64d03
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fabrics_0037.color.4k
+    second: {fileID: 2800000, guid: 7d7f03d701c698943850abe1b169e77d, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
