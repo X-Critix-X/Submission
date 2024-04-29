@@ -11,11 +11,11 @@ public class DoorAnimation : MonoBehaviour
 
     void Update()
     {
-       // // Toggle the door state when 'E' key is pressed
-       // if (Input.GetKeyDown(KeyCode.E))
-       // {
-       //     ToggleDoor();
-       // }
+        // Toggle the door state when 'E' key is pressed
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ToggleDoor();
+        }
     }
 
     void ToggleDoor()
